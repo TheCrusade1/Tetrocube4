@@ -3,6 +3,7 @@
 #include "PlayerBoard.h"
 #include "BlockBase.h"
 #include "TetrominoBase.h"
+#include "Tetrocube3/Tetrocube3.h"
 #include "Camera/CameraComponent.h"
 #include "Math/UnrealMathUtility.h"
 #include "Kismet/KismetMathLibrary.h"
@@ -89,6 +90,7 @@ void APlayerBoard::BeginPlay()
 
 	PlayerControllerRef = Cast<APlayerController>(GetController());
 	if (PlayerControllerRef) {
+		PlayerControllerRef->bShowMouseCursor = true;
 		UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(PlayerControllerRef->GetLocalPlayer());
 		if (Subsystem) {
 			Subsystem->AddMappingContext(TetrominoMappingContext, 1);
@@ -97,18 +99,6 @@ void APlayerBoard::BeginPlay()
 	}
 
 	InitializeQueue();
-}
-
-void APlayerBoard::InitializeQueue()
-{
-	for (int8 i = 0; i < 4; i++) {
-		AddTetrominoToQueue();
-	}
-}
-
-void APlayerBoard::ExitGame(const FInputActionValue &Value)
-{
-	UKismetSystemLibrary::QuitGame(this, PlayerControllerRef, EQuitPreference::Quit, false);
 }
 
 void APlayerBoard::AddTetrominoToQueue()
@@ -188,8 +178,8 @@ void APlayerBoard::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
 	if (UEnhancedInputComponent* EnhancedInputComponent = CastChecked<UEnhancedInputComponent>(PlayerInputComponent)) {
-		//EnhancedInputComponent->BindAction(MoveTetrominoActionCursor, ETriggerEvent::Triggered, this, &APlayerBoard::GetInputLocationCursor);
-		//EnhancedInputComponent->BindAction(MoveTetrominoActionTouch, ETriggerEvent::Triggered, this, &APlayerBoard::GetInputLocationTouch);
+		EnhancedInputComponent->BindAction(MoveTetrominoActionCursor, ETriggerEvent::Triggered, this, &APlayerBoard::GetInputLocationCursor);
+		EnhancedInputComponent->BindAction(MoveTetrominoActionTouch, ETriggerEvent::Triggered, this, &APlayerBoard::GetInputLocationTouch);
 		//EnhancedInputComponent->BindAction(HoldAction, ETriggerEvent::Completed, this, &APlayerBoard::SwapHold);
 		//EnhancedInputComponent->BindAction(MoveTetrominoActionCursor, ETriggerEvent::Completed, this, &APlayerBoard::SetTetrominoMoveDirectionEnding);
 		//EnhancedInputComponent->BindAction(MoveTetrominoActionTouch, ETriggerEvent::Completed, this, &APlayerBoard::SetTetrominoMoveDirectionEnding);
@@ -199,4 +189,88 @@ void APlayerBoard::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
 	}
 
 }
+
+void APlayerBoard::InitializeQueue()
+{
+	for (int8 i = 0; i < 4; i++) {
+		AddTetrominoToQueue();
+	}
+}
+
+void APlayerBoard::ExitGame(const FInputActionValue &Value)
+{
+	UKismetSystemLibrary::QuitGame(this, PlayerControllerRef, EQuitPreference::Quit, false);
+}
+
+void APlayerBoard::GetInputLocationCursor(const FInputActionValue& Value)
+{
+	FHitResult outHitResult;
+	if (PlayerControllerRef) {
+		PlayerControllerRef->GetHitResultUnderCursor(
+			ECollisionChannel::ECC_Visibility,
+			false,
+			outHitResult
+		);
+	}
+	DrawDebugSphere(GetWorld(), outHitResult.Location, 100.f, 10, FColor::Red);
+
+	SetTetrominoMoveDirection(outHitResult.Location);
+}
+
+void APlayerBoard::GetInputLocationTouch(const FInputActionValue& Value)
+{
+	FHitResult outHitResult;
+	if (PlayerControllerRef) {
+		PlayerControllerRef->GetHitResultAtScreenPosition(
+			Value.Get<FVector2D>(),
+			ECollisionChannel::ECC_Visibility,
+			false,
+			outHitResult
+		);
+
+	}
+	SetTetrominoMoveDirection(outHitResult.Location);
+
+}
+
+void APlayerBoard::SetTetrominoMoveDirection(FVector InputLocation)
+{
+	if (BoardStatus == EBoardStatus::EBS_Free) {
+		BoardStatus = EBoardStatus::EBS_Moving;
+		CheckSetInPlay();
+		/*TetrominoInPlay->SetInputLoc(InputLocation); //NOTE: No need for null check; TetrominoInPlay will always exsit after CheckSetInPlay()
+		ShowInputLocation(InputLocation);
+		if (InputLocation.X > tetrominoLoc.X) {
+			TetrominoInPlay->SetDirectionAndMoveTimers(1);
+		}
+		if (InputLocation.X < tetrominoLoc.X) {
+			TetrominoInPlay->SetDirectionAndMoveTimers(-1);
+		}
+		if (InputLocation.Z > tetrominoLoc.Z) {
+			TetrominoInPlay->SetDirectionAndMoveTimers(2);
+		}
+		if (InputLocation.Z < tetrominoLoc.Z) {
+			TetrominoInPlay->SetDirectionAndMoveTimers(-2);
+		}*/
+	}
+}
+
+void APlayerBoard::SetTetrominoMoveDriectionEnding(const FInputActionValue& Value)
+{
+	/*if (TetrominoInPlay && ActiveSliceY != EndSlice) {
+		BoardStatus = EBoardStatus::EBS_Dropping;
+		TetrominoInPlay->Drop();
+	}*/
+}
+
+void APlayerBoard::CheckSetInPlay()
+{
+	if (TetrominoInPlay == nullptr) {
+		TetrominoInPlay = Queue.Pop();
+		TetrominoInPlay->SetPosition(TopCenter->GetComponentLocation());
+		AddTetrominoToQueue();
+	}
+}
+
+
 

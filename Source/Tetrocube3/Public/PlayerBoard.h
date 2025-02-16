@@ -2,6 +2,7 @@
 
 #pragma once
 
+#include "Tetrocube3/Tetrocube3.h"
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
 #include "PlayerBoard.generated.h"
@@ -12,7 +13,6 @@ class UBoxComponent;
 class ABlockBase;
 class ATetrominoBase;
 struct FInputActionValue;
-
 
 UCLASS()
 class TETROCUBE3_API APlayerBoard : public APawn
@@ -38,12 +38,18 @@ public:
 	UPROPERTY(VisibleAnywhere, Category = "GAME DATA")
 	float timeRemaining = 0.f;
 
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
-	void InitializeQueue();
-	void ExitGame(const FInputActionValue &Value);
+	void InitializeQueue();	
 	void AddTetrominoToQueue();
+	void ExitGame(const FInputActionValue& Value);
+	void GetInputLocationCursor(const FInputActionValue& Value);
+	void GetInputLocationTouch(const FInputActionValue& Value);
+	void SetTetrominoMoveDirection(FVector InputLocation);
+	void SetTetrominoMoveDriectionEnding(const FInputActionValue& Value);
+	void CheckSetInPlay();
 
 	//Attributes for player board
 	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category = "ATTRIBUTES")
@@ -93,11 +99,14 @@ protected:
 	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="Input")
 	class UInputAction* MoveTetrominoActionCursor;
 	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category = "Input")
-	class UInputAction* MoveTetrominoTouch;
+	class UInputAction* MoveTetrominoActionTouch;
 	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category = "Input")
 	class UInputAction* ExitGameAction;
 	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category = "Input")
 	class UInputAction* HoldAction;
+
+	UPROPERTY(VisibleAnywhere, Category = "GAME DATA")
+	EBoardStatus BoardStatus = EBoardStatus::EBS_Free;
 
 	APlayerController* PlayerControllerRef;
 
