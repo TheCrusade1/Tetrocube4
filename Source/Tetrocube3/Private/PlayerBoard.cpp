@@ -212,7 +212,7 @@ void APlayerBoard::GetInputLocationCursor(const FInputActionValue& Value)
 			outHitResult
 		);
 	}
-	DrawDebugSphere(GetWorld(), outHitResult.Location, 100.f, 10, FColor::Red);
+	
 
 	SetTetrominoMoveDirection(outHitResult.Location);
 }
@@ -238,8 +238,9 @@ void APlayerBoard::SetTetrominoMoveDirection(FVector InputLocation)
 	if (BoardStatus == EBoardStatus::EBS_Free) {
 		BoardStatus = EBoardStatus::EBS_Moving;
 		CheckSetInPlay();
-		/*TetrominoInPlay->SetInputLoc(InputLocation); //NOTE: No need for null check; TetrominoInPlay will always exsit after CheckSetInPlay()
+		TetrominoInPlay->SetInputLoc(InputLocation); //NOTE: No need for null check; TetrominoInPlay will always exsit after CheckSetInPlay()
 		ShowInputLocation(InputLocation);
+		FVector tetrominoLoc = TetrominoInPlay-> GetActorLocation();
 		if (InputLocation.X > tetrominoLoc.X) {
 			TetrominoInPlay->SetDirectionAndMoveTimers(1);
 		}
@@ -251,7 +252,8 @@ void APlayerBoard::SetTetrominoMoveDirection(FVector InputLocation)
 		}
 		if (InputLocation.Z < tetrominoLoc.Z) {
 			TetrominoInPlay->SetDirectionAndMoveTimers(-2);
-		}*/
+		}
+		BoardStatus = EBoardStatus::EBS_Free;
 	}
 }
 
@@ -270,6 +272,11 @@ void APlayerBoard::CheckSetInPlay()
 		TetrominoInPlay->SetPosition(TopCenter->GetComponentLocation());
 		AddTetrominoToQueue();
 	}
+}
+
+void APlayerBoard::ShowInputLocation(FVector inputLocation)
+{
+	DrawDebugSphere(GetWorld(), inputLocation, 100.f, 10, FColor::Red);
 }
 
 

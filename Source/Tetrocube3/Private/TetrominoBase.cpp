@@ -41,6 +41,59 @@ void ATetrominoBase::BeginPlay()
 	SetBlockPositions();
 }
 
+void ATetrominoBase::Move(FVector newPosition, FVector prevPos)
+{
+	SetPosition(newPosition);
+	/*if (!bIsDropping) {
+		FindBestRotation();
+	}
+	CheckSetRevertPosition(prevPos);*/
+}
+
+void ATetrominoBase::MoveLeft()
+{
+	FVector prevPos = GetActorLocation();
+	//if (inputLoc.X < prevPos.X - MoveBuffer || bIsDropping) {
+		Move(FVector(prevPos.X - 100, prevPos.Y, prevPos.Z), prevPos);
+	//}
+	//else {
+		//FindBestRotation();
+	//}
+}
+
+void ATetrominoBase::MoveRight()
+{
+	FVector prevPos = GetActorLocation();
+	//if (inputLoc.X > prevPos.X + MoveBuffer || bIsDropping) {
+		Move(FVector(prevPos.X + 100, prevPos.Y, prevPos.Z), prevPos);
+	//}
+	//else {
+		//FindBestRotation();
+	//}
+}
+
+void ATetrominoBase::MoveUp()
+{
+	FVector prevPos = GetActorLocation();
+	//if (inputLoc.Z > prevPos.Z + MoveBuffer || bIsDropping) {
+		Move(FVector(prevPos.X, prevPos.Y, prevPos.Z + 100), prevPos);
+	//}
+	//else {
+		//FindBestRotation();
+	//}
+}
+
+void ATetrominoBase::MoveDown()
+{
+	FVector prevPos = GetActorLocation();
+	//if (inputLoc.Z < prevPos.Z - MoveBuffer || bIsDropping) {
+		Move(FVector(prevPos.X, prevPos.Y, prevPos.Z - 100), prevPos);
+	//}
+	//else {
+		//FindBestRotation();
+	//}
+}
+
 // Called every frame
 void ATetrominoBase::Tick(float DeltaTime)
 {
@@ -56,5 +109,36 @@ void ATetrominoBase::SetPosition(FVector newPosition)
 {
 	SetActorLocation(newPosition);
 	SetBlockPositions();
+}
+
+void ATetrominoBase::SetInputLoc(FVector loc)
+{
+	inputLoc = loc;
+}
+
+void ATetrominoBase::SetDirectionAndMoveTimers(int8 direction)
+{
+	switch (direction) {
+	case 1:
+		if (!GetWorldTimerManager().IsTimerActive(MoveXTimer)) {
+			GetWorldTimerManager().SetTimer(MoveXTimer, this, &ATetrominoBase::MoveRight, TimeBetweenMoves, false);
+		}
+	break;
+	case -1:
+		if (!GetWorldTimerManager().IsTimerActive(MoveXTimer)) {
+			GetWorldTimerManager().SetTimer(MoveXTimer, this, &ATetrominoBase::MoveLeft, TimeBetweenMoves, false);
+		}
+		break;
+	case 2:
+		if (!GetWorldTimerManager().IsTimerActive(MoveZTimer)) {
+			GetWorldTimerManager().SetTimer(MoveZTimer, this, &ATetrominoBase::MoveUp, TimeBetweenMoves, false);
+		}
+		break;
+	case -2:
+		if (!GetWorldTimerManager().IsTimerActive(MoveZTimer)) {
+			GetWorldTimerManager().SetTimer(MoveZTimer, this, &ATetrominoBase::MoveDown, TimeBetweenMoves, false);
+		}
+		break;
+	}
 }
 

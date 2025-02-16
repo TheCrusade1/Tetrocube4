@@ -20,18 +20,36 @@ public:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+	virtual void Move(FVector newPosition, FVector prevPos);
+	virtual void MoveLeft();
+	virtual void MoveRight();
+	virtual void MoveUp();
+	virtual void MoveDown();
 
-	TArray<FVector> BlockPositions;
 	UPROPERTY(VisibleAnywhere, Category = "ATTRIBUTES")
 	int8 Orientation = 0;
 	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category = "ATTRIBUTES")
 	TSubclassOf<ABlockBase> BP_BlockBase;
 	UPROPERTY(BluePrintReadOnly, VisibleAnywhere, Category = "ATTRIBUTES")
 	TArray<ABlockBase*> Blocks;
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="ATTRIBUTES")
+	float TimeBetweenMoves = .0125f;
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category = "ATTRIBUTES")
+	float TimeBetweenDroppingMoves = .00625f;
+
+	TArray<FVector> BlockPositions;
+	FVector inputLoc;
+	FTimerHandle MoveXTimer;
+	FTimerHandle MoveZTimer;
 
 public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 	virtual void SetBlockPositions();
 	virtual void SetPosition(FVector newPosition);
+	virtual void SetInputLoc(FVector loc);
+	void SetDirectionAndMoveTimers(int8 direction);
+
+	
+
 };

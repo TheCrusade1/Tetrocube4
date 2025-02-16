@@ -50,6 +50,7 @@ protected:
 	void SetTetrominoMoveDirection(FVector InputLocation);
 	void SetTetrominoMoveDriectionEnding(const FInputActionValue& Value);
 	void CheckSetInPlay();
+	void ShowInputLocation(FVector inputLocation);
 
 	//Attributes for player board
 	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category = "ATTRIBUTES")
