@@ -11,6 +11,8 @@ class UCameraComponent;
 class UBoxComponent;
 class ABlockBase;
 class ATetrominoBase;
+struct FInputActionValue;
+
 
 UCLASS()
 class TETROCUBE3_API APlayerBoard : public APawn
@@ -40,6 +42,7 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 	void InitializeQueue();
+	void ExitGame(const FInputActionValue &Value);
 	void AddTetrominoToQueue();
 
 	//Attributes for player board
@@ -84,6 +87,19 @@ protected:
 	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category = "TETROMINO TYPES")
 	TSubclassOf<ATetrominoBase> Z_Mino;
 
+	//Inputs
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="Input")
+	class UInputMappingContext* TetrominoMappingContext;
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="Input")
+	class UInputAction* MoveTetrominoActionCursor;
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category = "Input")
+	class UInputAction* MoveTetrominoTouch;
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category = "Input")
+	class UInputAction* ExitGameAction;
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category = "Input")
+	class UInputAction* HoldAction;
+
+	APlayerController* PlayerControllerRef;
 
 public:
 	// Called every frame

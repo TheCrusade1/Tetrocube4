@@ -86,6 +86,16 @@ APlayerBoard::APlayerBoard()
 void APlayerBoard::BeginPlay()
 {
 	Super::BeginPlay();
+
+	PlayerControllerRef = Cast<APlayerController>(GetController());
+	if (PlayerControllerRef) {
+		UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(PlayerControllerRef->GetLocalPlayer());
+		if (Subsystem) {
+			Subsystem->AddMappingContext(TetrominoMappingContext, 1);
+
+		}
+	}
+
 	InitializeQueue();
 }
 
@@ -94,6 +104,11 @@ void APlayerBoard::InitializeQueue()
 	for (int8 i = 0; i < 4; i++) {
 		AddTetrominoToQueue();
 	}
+}
+
+void APlayerBoard::ExitGame(const FInputActionValue &Value)
+{
+	UKismetSystemLibrary::QuitGame(this, PlayerControllerRef, EQuitPreference::Quit, false);
 }
 
 void APlayerBoard::AddTetrominoToQueue()
@@ -171,6 +186,17 @@ void APlayerBoard::Tick(float DeltaTime)
 void APlayerBoard::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
+
+	if (UEnhancedInputComponent* EnhancedInputComponent = CastChecked<UEnhancedInputComponent>(PlayerInputComponent)) {
+		//EnhancedInputComponent->BindAction(MoveTetrominoActionCursor, ETriggerEvent::Triggered, this, &APlayerBoard::GetInputLocationCursor);
+		//EnhancedInputComponent->BindAction(MoveTetrominoActionTouch, ETriggerEvent::Triggered, this, &APlayerBoard::GetInputLocationTouch);
+		//EnhancedInputComponent->BindAction(HoldAction, ETriggerEvent::Completed, this, &APlayerBoard::SwapHold);
+		//EnhancedInputComponent->BindAction(MoveTetrominoActionCursor, ETriggerEvent::Completed, this, &APlayerBoard::SetTetrominoMoveDirectionEnding);
+		//EnhancedInputComponent->BindAction(MoveTetrominoActionTouch, ETriggerEvent::Completed, this, &APlayerBoard::SetTetrominoMoveDirectionEnding);
+		EnhancedInputComponent->BindAction(ExitGameAction, ETriggerEvent::Triggered, this, &APlayerBoard::ExitGame);
+
+
+	}
 
 }
 
