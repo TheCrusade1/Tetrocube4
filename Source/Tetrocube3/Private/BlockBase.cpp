@@ -8,13 +8,17 @@
 ABlockBase::ABlockBase()
 {
 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = true;
+	PrimaryActorTick.bCanEverTick = false;
 
 	BlockCollision = CreateDefaultSubobject<UBoxComponent>(TEXT("Block Collision"));
 	RootComponent = BlockCollision;
 
 	BlockMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Block Mesh"));
 	BlockMesh->SetupAttachment(RootComponent);
+	
+	BlockCollision->OnComponentBeginOverlap.AddDynamic(this, &ABlockBase::SetColliding);
+	BlockCollision->OnComponentEndOverlap.AddDynamic(this, &ABlockBase::UnSetColliding);
+
 }
 
 // Called when the game starts or when spawned
@@ -24,10 +28,14 @@ void ABlockBase::BeginPlay()
 
 }
 
-// Called every frame
-void ABlockBase::Tick(float DeltaTime)
+void ABlockBase::SetColliding(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
-	Super::Tick(DeltaTime);
-
+	bColliding = true;
 }
+
+void ABlockBase::UnSetColliding(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
+{
+	bColliding = false;
+}
+
 

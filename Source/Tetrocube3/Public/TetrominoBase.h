@@ -17,6 +17,7 @@ public:
 	// Sets default values for this actor's properties
 	ATetrominoBase();
 
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -25,9 +26,12 @@ protected:
 	virtual void MoveRight();
 	virtual void MoveUp();
 	virtual void MoveDown();
+	virtual void CheckSetRevertPosition(FVector prevPos);
 
 	UPROPERTY(VisibleAnywhere, Category = "ATTRIBUTES")
 	int8 Orientation = 0;
+	UPROPERTY(BluePrintReadWrite, VisibleAnywhere, Category="ATTRIBUTES")
+	float MoveBuffer = 100.f;
 	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category = "ATTRIBUTES")
 	TSubclassOf<ABlockBase> BP_BlockBase;
 	UPROPERTY(BluePrintReadOnly, VisibleAnywhere, Category = "ATTRIBUTES")
@@ -49,7 +53,7 @@ public:
 	virtual void SetPosition(FVector newPosition);
 	virtual void SetInputLoc(FVector loc);
 	void SetDirectionAndMoveTimers(int8 direction);
-
+	virtual bool IsColliding();
 	
 
 };

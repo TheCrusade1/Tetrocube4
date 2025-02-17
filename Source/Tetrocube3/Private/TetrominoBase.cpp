@@ -46,16 +46,16 @@ void ATetrominoBase::Move(FVector newPosition, FVector prevPos)
 	SetPosition(newPosition);
 	/*if (!bIsDropping) {
 		FindBestRotation();
-	}
-	CheckSetRevertPosition(prevPos);*/
+	}*/
+	CheckSetRevertPosition(prevPos);
 }
 
 void ATetrominoBase::MoveLeft()
 {
 	FVector prevPos = GetActorLocation();
-	//if (inputLoc.X < prevPos.X - MoveBuffer || bIsDropping) {
+	if (inputLoc.X < prevPos.X - MoveBuffer){// || bIsDropping) {
 		Move(FVector(prevPos.X - 100, prevPos.Y, prevPos.Z), prevPos);
-	//}
+	}
 	//else {
 		//FindBestRotation();
 	//}
@@ -64,9 +64,9 @@ void ATetrominoBase::MoveLeft()
 void ATetrominoBase::MoveRight()
 {
 	FVector prevPos = GetActorLocation();
-	//if (inputLoc.X > prevPos.X + MoveBuffer || bIsDropping) {
+	if (inputLoc.X > prevPos.X + MoveBuffer ){//|| bIsDropping) {
 		Move(FVector(prevPos.X + 100, prevPos.Y, prevPos.Z), prevPos);
-	//}
+	}
 	//else {
 		//FindBestRotation();
 	//}
@@ -75,9 +75,9 @@ void ATetrominoBase::MoveRight()
 void ATetrominoBase::MoveUp()
 {
 	FVector prevPos = GetActorLocation();
-	//if (inputLoc.Z > prevPos.Z + MoveBuffer || bIsDropping) {
+	if (inputLoc.Z > prevPos.Z + MoveBuffer){// || bIsDropping) {
 		Move(FVector(prevPos.X, prevPos.Y, prevPos.Z + 100), prevPos);
-	//}
+	}
 	//else {
 		//FindBestRotation();
 	//}
@@ -86,12 +86,19 @@ void ATetrominoBase::MoveUp()
 void ATetrominoBase::MoveDown()
 {
 	FVector prevPos = GetActorLocation();
-	//if (inputLoc.Z < prevPos.Z - MoveBuffer || bIsDropping) {
+	if (inputLoc.Z < prevPos.Z - MoveBuffer ){//|| bIsDropping) {
 		Move(FVector(prevPos.X, prevPos.Y, prevPos.Z - 100), prevPos);
-	//}
+	}
 	//else {
 		//FindBestRotation();
 	//}
+}
+
+void ATetrominoBase::CheckSetRevertPosition(FVector prevPos)
+{
+	if (IsColliding()) {
+		SetPosition(prevPos);
+	}
 }
 
 // Called every frame
@@ -140,5 +147,21 @@ void ATetrominoBase::SetDirectionAndMoveTimers(int8 direction)
 		}
 		break;
 	}
+}
+
+bool ATetrominoBase::IsColliding()
+{
+	for (ABlockBase*& block : Blocks) {
+		if (block->IsColliding()) {
+			/*if (bIsDropping) {
+				GetWorldTimerManager().ClearAllTimersForObject(this);
+				GEngine->AddOnScreenDebugMessage(4, 1, FColor::Blue, FString("Finished Dropping..."), false);
+				bIsDropping = false;
+				bIsFinishedDropping = true;
+			}*/
+			return true;
+		}
+	}
+	return false;
 }
 
