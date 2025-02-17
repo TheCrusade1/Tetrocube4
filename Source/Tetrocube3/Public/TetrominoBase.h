@@ -16,7 +16,9 @@ class TETROCUBE3_API ATetrominoBase : public AActor
 public:
 	// Sets default values for this actor's properties
 	ATetrominoBase();
-
+	virtual void Drop();
+	FORCEINLINE virtual bool IsDropping() const { return bIsDropping; };
+	FORCEINLINE virtual bool IsFinishedDropping() const { return bIsFinishedDropping; };
 
 protected:
 	// Called when the game starts or when spawned
@@ -27,6 +29,7 @@ protected:
 	virtual void MoveUp();
 	virtual void MoveDown();
 	virtual void CheckSetRevertPosition(FVector prevPos);
+	
 
 	UPROPERTY(VisibleAnywhere, Category = "ATTRIBUTES")
 	int8 Orientation = 0;
@@ -45,6 +48,8 @@ protected:
 	FVector inputLoc;
 	FTimerHandle MoveXTimer;
 	FTimerHandle MoveZTimer;
+	bool bIsDropping = false;
+	bool bIsFinishedDropping = false; 
 
 public:
 	// Called every frame

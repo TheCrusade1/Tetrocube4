@@ -169,7 +169,7 @@ void APlayerBoard::AddTetrominoToQueue()
 void APlayerBoard::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
+	BoardStatus = StatusPicker();
 }
 
 // Called to bind functionality to input
@@ -181,8 +181,8 @@ void APlayerBoard::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
 		EnhancedInputComponent->BindAction(MoveTetrominoActionCursor, ETriggerEvent::Triggered, this, &APlayerBoard::GetInputLocationCursor);
 		EnhancedInputComponent->BindAction(MoveTetrominoActionTouch, ETriggerEvent::Triggered, this, &APlayerBoard::GetInputLocationTouch);
 		//EnhancedInputComponent->BindAction(HoldAction, ETriggerEvent::Completed, this, &APlayerBoard::SwapHold);
-		//EnhancedInputComponent->BindAction(MoveTetrominoActionCursor, ETriggerEvent::Completed, this, &APlayerBoard::SetTetrominoMoveDirectionEnding);
-		//EnhancedInputComponent->BindAction(MoveTetrominoActionTouch, ETriggerEvent::Completed, this, &APlayerBoard::SetTetrominoMoveDirectionEnding);
+		EnhancedInputComponent->BindAction(MoveTetrominoActionCursor, ETriggerEvent::Completed, this, &APlayerBoard::SetTetrominoMoveDirectionEnding);
+		EnhancedInputComponent->BindAction(MoveTetrominoActionTouch, ETriggerEvent::Completed, this, &APlayerBoard::SetTetrominoMoveDirectionEnding);
 		EnhancedInputComponent->BindAction(ExitGameAction, ETriggerEvent::Triggered, this, &APlayerBoard::ExitGame);
 
 
@@ -253,16 +253,15 @@ void APlayerBoard::SetTetrominoMoveDirection(FVector InputLocation)
 		if (InputLocation.Z < tetrominoLoc.Z) {
 			TetrominoInPlay->SetDirectionAndMoveTimers(-2);
 		}
-		BoardStatus = EBoardStatus::EBS_Free;
 	}
 }
 
-void APlayerBoard::SetTetrominoMoveDriectionEnding(const FInputActionValue& Value)
+void APlayerBoard::SetTetrominoMoveDirectionEnding(const FInputActionValue& Value)
 {
-	/*if (TetrominoInPlay && ActiveSliceY != EndSlice) {
+	if (TetrominoInPlay){//}&& ActiveSliceY != EndSlice) {
 		BoardStatus = EBoardStatus::EBS_Dropping;
 		TetrominoInPlay->Drop();
-	}*/
+	}
 }
 
 void APlayerBoard::CheckSetInPlay()
@@ -277,6 +276,17 @@ void APlayerBoard::CheckSetInPlay()
 void APlayerBoard::ShowInputLocation(FVector inputLocation)
 {
 	DrawDebugSphere(GetWorld(), inputLocation, 100.f, 10, FColor::Red);
+}
+
+EBoardStatus APlayerBoard::StatusPicker()
+{
+	if (TetrominoInPlay && TetrominoInPlay->IsFinishedDropping()) {
+		return EBoardStatus::EBS_DropFinished;
+	}
+	if (TetrominoInPlay && TetrominoInPlay->IsDropping()) {
+		return EBoardStatus::EBS_Dropping;
+	}
+	return EBoardStatus::EBS_Free;
 }
 
 

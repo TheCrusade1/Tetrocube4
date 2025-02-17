@@ -48,9 +48,10 @@ protected:
 	void GetInputLocationCursor(const FInputActionValue& Value);
 	void GetInputLocationTouch(const FInputActionValue& Value);
 	void SetTetrominoMoveDirection(FVector InputLocation);
-	void SetTetrominoMoveDriectionEnding(const FInputActionValue& Value);
+	void SetTetrominoMoveDirectionEnding(const FInputActionValue& Value);
 	void CheckSetInPlay();
 	void ShowInputLocation(FVector inputLocation);
+	EBoardStatus StatusPicker();
 
 	//Attributes for player board
 	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category = "ATTRIBUTES")
