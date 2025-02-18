@@ -76,15 +76,15 @@ void EmptyLinkFunctionForGeneratedCodeTetrocube3() {}
 		}
 		return Z_Registration_Info_UEnum_EBoardStatus.InnerSingleton;
 	}
-	struct Z_CompiledInDeferFile_FID_GitHub_Tetrocube4_Source_Tetrocube3_Tetrocube3_h_Statics
+	struct Z_CompiledInDeferFile_FID_Unreal_5_3_Projects_Tetrocube3_Source_Tetrocube3_Tetrocube3_h_Statics
 	{
 		static const FEnumRegisterCompiledInInfo EnumInfo[];
 	};
-	const FEnumRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_Tetrocube4_Source_Tetrocube3_Tetrocube3_h_Statics::EnumInfo[] = {
+	const FEnumRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_5_3_Projects_Tetrocube3_Source_Tetrocube3_Tetrocube3_h_Statics::EnumInfo[] = {
 		{ EBoardStatus_StaticEnum, TEXT("EBoardStatus"), &Z_Registration_Info_UEnum_EBoardStatus, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 3092391975U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_Tetrocube4_Source_Tetrocube3_Tetrocube3_h_339868506(TEXT("/Script/Tetrocube3"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_5_3_Projects_Tetrocube3_Source_Tetrocube3_Tetrocube3_h_339868506(TEXT("/Script/Tetrocube3"),
 		nullptr, 0,
 		nullptr, 0,
-		Z_CompiledInDeferFile_FID_GitHub_Tetrocube4_Source_Tetrocube3_Tetrocube3_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_Tetrocube4_Source_Tetrocube3_Tetrocube3_h_Statics::EnumInfo));
+		Z_CompiledInDeferFile_FID_Unreal_5_3_Projects_Tetrocube3_Source_Tetrocube3_Tetrocube3_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_5_3_Projects_Tetrocube3_Source_Tetrocube3_Tetrocube3_h_Statics::EnumInfo));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

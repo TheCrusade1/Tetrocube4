@@ -94,15 +94,15 @@ void EmptyLinkFunctionForGeneratedCodeTetrocube3HUD() {}
 	}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ATetrocube3HUD);
 	ATetrocube3HUD::~ATetrocube3HUD() {}
-	struct Z_CompiledInDeferFile_FID_GitHub_Tetrocube4_Source_Tetrocube3_Public_Tetrocube3HUD_h_Statics
+	struct Z_CompiledInDeferFile_FID_Unreal_5_3_Projects_Tetrocube3_Source_Tetrocube3_Public_Tetrocube3HUD_h_Statics
 	{
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
-	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_Tetrocube4_Source_Tetrocube3_Public_Tetrocube3HUD_h_Statics::ClassInfo[] = {
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_5_3_Projects_Tetrocube3_Source_Tetrocube3_Public_Tetrocube3HUD_h_Statics::ClassInfo[] = {
 		{ Z_Construct_UClass_ATetrocube3HUD, ATetrocube3HUD::StaticClass, TEXT("ATetrocube3HUD"), &Z_Registration_Info_UClass_ATetrocube3HUD, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATetrocube3HUD), 3043051586U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_Tetrocube4_Source_Tetrocube3_Public_Tetrocube3HUD_h_3780798948(TEXT("/Script/Tetrocube3"),
-		Z_CompiledInDeferFile_FID_GitHub_Tetrocube4_Source_Tetrocube3_Public_Tetrocube3HUD_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_Tetrocube4_Source_Tetrocube3_Public_Tetrocube3HUD_h_Statics::ClassInfo),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_5_3_Projects_Tetrocube3_Source_Tetrocube3_Public_Tetrocube3HUD_h_3780798948(TEXT("/Script/Tetrocube3"),
+		Z_CompiledInDeferFile_FID_Unreal_5_3_Projects_Tetrocube3_Source_Tetrocube3_Public_Tetrocube3HUD_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_5_3_Projects_Tetrocube3_Source_Tetrocube3_Public_Tetrocube3HUD_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

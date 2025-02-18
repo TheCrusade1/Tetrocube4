@@ -109,6 +109,7 @@
     <None Include="..\..\Tetrocube3.uproject"/>
     <None Include="..\..\Source\Tetrocube3.Target.cs"/>
     <None Include="..\..\Source\Tetrocube3Editor.Target.cs"/>
+    <None Include="..\..\.gitattributes"/>
     <None Include="..\..\.vsconfig"/>
     <None Include="..\..\Config\DefaultEditor.ini"/>
     <None Include="..\..\Config\DefaultEngine.ini"/>
@@ -127,6 +128,11 @@
       <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="..\..\Source\Tetrocube3\Private\PlayerBoard.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
+      <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Tetrocube3\Private\Test.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
       <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
@@ -183,6 +189,7 @@
     </ClCompile>
     <ClInclude Include="..\..\Source\Tetrocube3\Public\BlockBase.h"/>
     <ClInclude Include="..\..\Source\Tetrocube3\Public\PlayerBoard.h"/>
+    <ClInclude Include="..\..\Source\Tetrocube3\Public\Test.h"/>
     <ClInclude Include="..\..\Source\Tetrocube3\Public\Tetrocube3HUD.h"/>
     <ClInclude Include="..\..\Source\Tetrocube3\Public\Tetrocube3HUDWidget.h"/>
     <ClInclude Include="..\..\Source\Tetrocube3\Public\TetrominoBase.h"/>

@@ -1,11 +1,11 @@
-"C:\GitHub\Tetrocube4\Source\Tetrocube3\Tetrocube3.cpp"
-/FI"C:\GitHub\Tetrocube4\Intermediate\Build\Win64\x64\Tetrocube3Editor\DebugGame\Engine\SharedPCH.Engine.NonOptimized.Cpp20.h"
-/FI"C:\GitHub\Tetrocube4\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\Tetrocube3\Definitions.Tetrocube3.h"
-/Yu"C:\GitHub\Tetrocube4\Intermediate\Build\Win64\x64\Tetrocube3Editor\DebugGame\Engine\SharedPCH.Engine.NonOptimized.Cpp20.h"
-/Fp"C:\GitHub\Tetrocube4\Intermediate\Build\Win64\x64\Tetrocube3Editor\DebugGame\Engine\SharedPCH.Engine.NonOptimized.Cpp20.h.pch"
-/Fo"C:\GitHub\Tetrocube4\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\Tetrocube3\Tetrocube3.cpp.obj"
-/sourceDependencies "C:\GitHub\Tetrocube4\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\Tetrocube3\Tetrocube3.cpp.dep.json"
-@"C:\GitHub\Tetrocube4\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\Tetrocube3\Tetrocube3.Shared.rsp"
+"C:\Users\gjdob\Downloads\Help-main (2)\Help-main\Source\Tetrocube3\Tetrocube3.cpp"
+/FI"C:\Users\gjdob\Downloads\Help-main (2)\Help-main\Intermediate\Build\Win64\x64\Tetrocube3Editor\DebugGame\Engine\SharedPCH.Engine.NonOptimized.Cpp20.h"
+/FI"C:\Users\gjdob\Downloads\Help-main (2)\Help-main\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\Tetrocube3\Definitions.Tetrocube3.h"
+/Yu"C:\Users\gjdob\Downloads\Help-main (2)\Help-main\Intermediate\Build\Win64\x64\Tetrocube3Editor\DebugGame\Engine\SharedPCH.Engine.NonOptimized.Cpp20.h"
+/Fp"C:\Users\gjdob\Downloads\Help-main (2)\Help-main\Intermediate\Build\Win64\x64\Tetrocube3Editor\DebugGame\Engine\SharedPCH.Engine.NonOptimized.Cpp20.h.pch"
+/Fo"C:\Users\gjdob\Downloads\Help-main (2)\Help-main\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\Tetrocube3\Tetrocube3.cpp.obj"
+/sourceDependencies "C:\Users\gjdob\Downloads\Help-main (2)\Help-main\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\Tetrocube3\Tetrocube3.cpp.dep.json"
+@"C:\Users\gjdob\Downloads\Help-main (2)\Help-main\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\Tetrocube3\Tetrocube3.Shared.rsp"
 /Zc:inline
 /nologo
 /Oi

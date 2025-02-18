@@ -1,119 +1,12 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\GitHub\\Tetrocube4\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{D3A52B1B-DD0C-399A-89AF-09A50816DAE1}|Intermediate\\ProjectFiles\\Tetrocube3.vcxproj|C:\\GitHub\\Tetrocube4\\Source\\Tetrocube3\\Private\\BlockBase.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{D3A52B1B-DD0C-399A-89AF-09A50816DAE1}|Intermediate\\ProjectFiles\\Tetrocube3.vcxproj|solutionrelative:Source\\Tetrocube3\\Private\\BlockBase.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D3A52B1B-DD0C-399A-89AF-09A50816DAE1}|Intermediate\\ProjectFiles\\Tetrocube3.vcxproj|C:\\GitHub\\Tetrocube4\\Source\\Tetrocube3\\Private\\PlayerBoard.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{D3A52B1B-DD0C-399A-89AF-09A50816DAE1}|Intermediate\\ProjectFiles\\Tetrocube3.vcxproj|solutionrelative:Source\\Tetrocube3\\Private\\PlayerBoard.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D3A52B1B-DD0C-399A-89AF-09A50816DAE1}|Intermediate\\ProjectFiles\\Tetrocube3.vcxproj|C:\\GitHub\\Tetrocube4\\Source\\Tetrocube3\\Public\\BlockBase.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{D3A52B1B-DD0C-399A-89AF-09A50816DAE1}|Intermediate\\ProjectFiles\\Tetrocube3.vcxproj|solutionrelative:Source\\Tetrocube3\\Public\\BlockBase.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D3A52B1B-DD0C-399A-89AF-09A50816DAE1}|Intermediate\\ProjectFiles\\Tetrocube3.vcxproj|C:\\GitHub\\Tetrocube4\\Source\\Tetrocube3\\Public\\TetrominoBase.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{D3A52B1B-DD0C-399A-89AF-09A50816DAE1}|Intermediate\\ProjectFiles\\Tetrocube3.vcxproj|solutionrelative:Source\\Tetrocube3\\Public\\TetrominoBase.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D3A52B1B-DD0C-399A-89AF-09A50816DAE1}|Intermediate\\ProjectFiles\\Tetrocube3.vcxproj|C:\\GitHub\\Tetrocube4\\Source\\Tetrocube3\\Private\\TetrominoBase.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{D3A52B1B-DD0C-399A-89AF-09A50816DAE1}|Intermediate\\ProjectFiles\\Tetrocube3.vcxproj|solutionrelative:Source\\Tetrocube3\\Private\\TetrominoBase.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D3A52B1B-DD0C-399A-89AF-09A50816DAE1}|Intermediate\\ProjectFiles\\Tetrocube3.vcxproj|C:\\GitHub\\Tetrocube4\\Source\\Tetrocube3\\Public\\PlayerBoard.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{D3A52B1B-DD0C-399A-89AF-09A50816DAE1}|Intermediate\\ProjectFiles\\Tetrocube3.vcxproj|solutionrelative:Source\\Tetrocube3\\Public\\PlayerBoard.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    }
-  ],
+  "WorkspaceRootPath": "C:\\Unreal 5.3 Projects\\Tetrocube3\\",
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 1,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "BlockBase.h",
-              "DocumentMoniker": "C:\\GitHub\\Tetrocube4\\Source\\Tetrocube3\\Public\\BlockBase.h",
-              "RelativeDocumentMoniker": "Source\\Tetrocube3\\Public\\BlockBase.h",
-              "ToolTip": "C:\\GitHub\\Tetrocube4\\Source\\Tetrocube3\\Public\\BlockBase.h",
-              "RelativeToolTip": "Source\\Tetrocube3\\Public\\BlockBase.h",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAowBMAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-02-17T04:32:45.038Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "BlockBase.cpp",
-              "DocumentMoniker": "C:\\GitHub\\Tetrocube4\\Source\\Tetrocube3\\Private\\BlockBase.cpp",
-              "RelativeDocumentMoniker": "Source\\Tetrocube3\\Private\\BlockBase.cpp",
-              "ToolTip": "C:\\GitHub\\Tetrocube4\\Source\\Tetrocube3\\Private\\BlockBase.cpp",
-              "RelativeToolTip": "Source\\Tetrocube3\\Private\\BlockBase.cpp",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAwBkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-02-17T04:25:27.131Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "TetrominoBase.cpp",
-              "DocumentMoniker": "C:\\GitHub\\Tetrocube4\\Source\\Tetrocube3\\Private\\TetrominoBase.cpp",
-              "RelativeDocumentMoniker": "Source\\Tetrocube3\\Private\\TetrominoBase.cpp",
-              "ToolTip": "C:\\GitHub\\Tetrocube4\\Source\\Tetrocube3\\Private\\TetrominoBase.cpp",
-              "RelativeToolTip": "Source\\Tetrocube3\\Private\\TetrominoBase.cpp",
-              "ViewState": "AgIAAGIAAAAAAAAAAAAowHMAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-02-16T00:32:48.553Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "TetrominoBase.h",
-              "DocumentMoniker": "C:\\GitHub\\Tetrocube4\\Source\\Tetrocube3\\Public\\TetrominoBase.h",
-              "RelativeDocumentMoniker": "Source\\Tetrocube3\\Public\\TetrominoBase.h",
-              "ToolTip": "C:\\GitHub\\Tetrocube4\\Source\\Tetrocube3\\Public\\TetrominoBase.h",
-              "RelativeToolTip": "Source\\Tetrocube3\\Public\\TetrominoBase.h",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAcwBUAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-02-16T00:32:47.495Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "PlayerBoard.h",
-              "DocumentMoniker": "C:\\GitHub\\Tetrocube4\\Source\\Tetrocube3\\Public\\PlayerBoard.h",
-              "RelativeDocumentMoniker": "Source\\Tetrocube3\\Public\\PlayerBoard.h",
-              "ToolTip": "C:\\GitHub\\Tetrocube4\\Source\\Tetrocube3\\Public\\PlayerBoard.h",
-              "RelativeToolTip": "Source\\Tetrocube3\\Public\\PlayerBoard.h",
-              "ViewState": "AgIAABgAAAAAAAAAAAAcwDUAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-02-16T00:32:44.582Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PlayerBoard.cpp",
-              "DocumentMoniker": "C:\\GitHub\\Tetrocube4\\Source\\Tetrocube3\\Private\\PlayerBoard.cpp",
-              "RelativeDocumentMoniker": "Source\\Tetrocube3\\Private\\PlayerBoard.cpp",
-              "ToolTip": "C:\\GitHub\\Tetrocube4\\Source\\Tetrocube3\\Private\\PlayerBoard.cpp",
-              "RelativeToolTip": "Source\\Tetrocube3\\Private\\PlayerBoard.cpp",
-              "ViewState": "AgIAABEBAAAAAAAAAAAAwBsBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-02-16T00:32:36.917Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }

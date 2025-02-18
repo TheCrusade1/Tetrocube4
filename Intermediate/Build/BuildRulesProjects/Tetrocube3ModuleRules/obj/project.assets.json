@@ -8070,11 +8070,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\GitHub\\Tetrocube4\\Intermediate\\Build\\BuildRulesProjects\\Tetrocube3ModuleRules\\Tetrocube3ModuleRules.csproj",
+      "projectUniqueName": "C:\\Unreal 5.3 Projects\\Tetrocube3\\Intermediate\\Build\\BuildRulesProjects\\Tetrocube3ModuleRules\\Tetrocube3ModuleRules.csproj",
       "projectName": "Tetrocube3ModuleRules",
-      "projectPath": "C:\\GitHub\\Tetrocube4\\Intermediate\\Build\\BuildRulesProjects\\Tetrocube3ModuleRules\\Tetrocube3ModuleRules.csproj",
+      "projectPath": "C:\\Unreal 5.3 Projects\\Tetrocube3\\Intermediate\\Build\\BuildRulesProjects\\Tetrocube3ModuleRules\\Tetrocube3ModuleRules.csproj",
       "packagesPath": "C:\\Users\\gjdob\\.nuget\\packages\\",
-      "outputPath": "C:\\GitHub\\Tetrocube4\\Intermediate\\Build\\BuildRulesProjects\\Tetrocube3ModuleRules\\obj\\",
+      "outputPath": "C:\\Unreal 5.3 Projects\\Tetrocube3\\Intermediate\\Build\\BuildRulesProjects\\Tetrocube3ModuleRules\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

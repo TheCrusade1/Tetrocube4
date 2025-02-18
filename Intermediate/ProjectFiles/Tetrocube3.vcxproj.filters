@@ -11,6 +11,7 @@
     <None Include="..\..\Source\Tetrocube3Editor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.gitattributes" />
     <None Include="..\..\.vsconfig" />
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
@@ -46,6 +47,9 @@
       <Filter>Source\Tetrocube3\Private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\Tetrocube3\Private\PlayerBoard.cpp">
+      <Filter>Source\Tetrocube3\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Tetrocube3\Private\Test.cpp">
       <Filter>Source\Tetrocube3\Private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\Tetrocube3\Private\Tetrocube3HUD.cpp">
@@ -85,6 +89,9 @@
       <Filter>Source\Tetrocube3\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\Tetrocube3\Public\PlayerBoard.h">
+      <Filter>Source\Tetrocube3\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Tetrocube3\Public\Test.h">
       <Filter>Source\Tetrocube3\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\Tetrocube3\Public\Tetrocube3HUD.h">

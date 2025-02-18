@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BnkwWFS2Eig=",
+  "dgSpecHash": "Pzm3+0jza2M=",
   "success": true,
-  "projectFilePath": "C:\\GitHub\\Tetrocube4\\Intermediate\\Build\\BuildRulesProjects\\Tetrocube3ModuleRules\\Tetrocube3ModuleRules.csproj",
+  "projectFilePath": "C:\\Unreal 5.3 Projects\\Tetrocube3\\Intermediate\\Build\\BuildRulesProjects\\Tetrocube3ModuleRules\\Tetrocube3ModuleRules.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gjdob\\.nuget\\packages\\blake3\\0.5.1\\blake3.0.5.1.nupkg.sha512",
     "C:\\Users\\gjdob\\.nuget\\packages\\humanizer.core\\2.2.0\\humanizer.core.2.2.0.nupkg.sha512",
