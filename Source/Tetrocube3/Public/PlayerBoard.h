@@ -51,6 +51,7 @@ protected:
 	void SetTetrominoMoveDirectionEnding(const FInputActionValue& Value);
 	void CheckSetInPlay();
 	void ShowInputLocation(FVector inputLocation);
+	void DropEnded();
 	EBoardStatus StatusPicker();
 
 	//Attributes for player board

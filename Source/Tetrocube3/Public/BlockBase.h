@@ -17,6 +17,7 @@ public:
 	// Sets default values for this actor's properties
 	ABlockBase();
 	FORCEINLINE bool IsColliding() const { return bColliding; }
+	void SetCollisionToStatic();
 
 protected:
 	UPROPERTY(BlueprintReadwrite, EditAnywhere, Category = "ATTRIBUTES")

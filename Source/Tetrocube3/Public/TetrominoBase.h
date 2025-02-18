@@ -19,6 +19,7 @@ public:
 	virtual void Drop();
 	FORCEINLINE virtual bool IsDropping() const { return bIsDropping; };
 	FORCEINLINE virtual bool IsFinishedDropping() const { return bIsFinishedDropping; };
+	virtual TArray<ABlockBase*> SetCollisionToStatic();
 
 protected:
 	// Called when the game starts or when spawned

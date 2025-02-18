@@ -170,6 +170,7 @@ void APlayerBoard::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 	BoardStatus = StatusPicker();
+	if (BoardStatus == EBoardStatus::EBS_DropFinished) DropEnded();
 }
 
 // Called to bind functionality to input
@@ -278,14 +279,27 @@ void APlayerBoard::ShowInputLocation(FVector inputLocation)
 	DrawDebugSphere(GetWorld(), inputLocation, 100.f, 10, FColor::Red);
 }
 
+void APlayerBoard::DropEnded() 
+{
+	BlocksInPlay.Append(TetrominoInPlay->SetCollisionToStatic());
+	// TetrominoInPlay->SetBlockActiveInactivePositions(ActiveSliceY);
+	TetrominoInPlay->Destroy();
+	TetrominoInPlay = nullptr;
+	// if(!GetWorldTimerManager().IsTimerActive(ActiveSliceHandle)){
+	//	ChangeActiveSlice();
+	// }
+}
 EBoardStatus APlayerBoard::StatusPicker()
 {
 	if (TetrominoInPlay && TetrominoInPlay->IsFinishedDropping()) {
+		GEngine->AddOnScreenDebugMessage(0, 1.f, FColor::Blue, FString("EBS_DropFinished"));
 		return EBoardStatus::EBS_DropFinished;
 	}
 	if (TetrominoInPlay && TetrominoInPlay->IsDropping()) {
+		GEngine->AddOnScreenDebugMessage(0, 1.f, FColor::Blue, FString("EBS_Dropping"));
 		return EBoardStatus::EBS_Dropping;
 	}
+	GEngine->AddOnScreenDebugMessage(0, 1.f, FColor::Blue, FString("EBS_Free"));
 	return EBoardStatus::EBS_Free;
 }
 

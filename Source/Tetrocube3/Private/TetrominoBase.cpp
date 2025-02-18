@@ -110,6 +110,14 @@ void ATetrominoBase::Drop()
 	}
 }
 
+TArray<ABlockBase *> ATetrominoBase::SetCollisionToStatic()
+{
+	for (auto &block:Blocks) {
+		block->SetCollisionToStatic();
+	}
+	return Blocks;
+}
+
 // Called every frame
 void ATetrominoBase::Tick(float DeltaTime)
 {

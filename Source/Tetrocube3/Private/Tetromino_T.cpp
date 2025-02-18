@@ -3,7 +3,7 @@
 
 #include "Tetromino_T.h"
 #include "BlockBase.h"
-
+/*
 ATetromino_T::ATetromino_T()
 {
 	PrimaryActorTick.bCanEverTick = false;

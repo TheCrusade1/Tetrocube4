@@ -1,0 +1,38 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"C:/Unreal 5.3 Projects/Tetrocube3/Content/Blueprints/Actors/BP_PlayerBoard.uasset",
+				"C:/Unreal 5.3 Projects/Tetrocube3/Content/Levels/Tetrocube3.umap",
+				"C:/Unreal 5.3 Projects/Tetrocube3/Content/Blueprints/Actors/BP_I.uasset",
+				"C:/Unreal 5.3 Projects/Tetrocube3/Content/Meshes/SM_I.uasset",
+				"C:/Unreal 5.3 Projects/Tetrocube3/Content/Meshes/I.uasset",
+				"C:/Unreal 5.3 Projects/Tetrocube3/Content/Blueprints/Actors/BP_BlockBase.uasset",
+				"C:/Unreal 5.3 Projects/Tetrocube3/Content/Meshes/cube.uasset",
+				"C:/Unreal 5.3 Projects/Tetrocube3/Content/Blueprints/Actors/BP_T.uasset",
+				"C:/Unreal 5.3 Projects/Tetrocube3/Content/Blueprints/Actors/BP_L.uasset",
+				"C:/Unreal 5.3 Projects/Tetrocube3/Content/Blueprints/Actors/BP_J.uasset",
+				"C:/Unreal 5.3 Projects/Tetrocube3/Content/Blueprints/Actors/BP_S.uasset",
+				"C:/Unreal 5.3 Projects/Tetrocube3/Content/Blueprints/Actors/BP_Z.uasset",
+				"C:/Unreal 5.3 Projects/Tetrocube3/Content/Blueprints/Actors/BP_O.uasset",
+				"C:/Unreal 5.3 Projects/Tetrocube3/Content/Meshes/Blocks.uasset",
+				"C:/Unreal 5.3 Projects/Tetrocube3/Content/Meshes/SM_J.uasset",
+				"C:/Unreal 5.3 Projects/Tetrocube3/Content/Meshes/SM_L.uasset",
+				"C:/Unreal 5.3 Projects/Tetrocube3/Content/Meshes/SM_O.uasset",
+				"C:/Unreal 5.3 Projects/Tetrocube3/Content/Meshes/SM_S.uasset",
+				"C:/Unreal 5.3 Projects/Tetrocube3/Content/Meshes/SM_T.uasset",
+				"C:/Unreal 5.3 Projects/Tetrocube3/Content/Meshes/SM_Z.uasset",
+				"C:/Unreal 5.3 Projects/Tetrocube3/Content/Input/IA_Cursor.uasset",
+				"C:/Unreal 5.3 Projects/Tetrocube3/Content/Input/IMC_Tetrocube3MappingContext.uasset",
+				"C:/Unreal 5.3 Projects/Tetrocube3/Content/Input/IA_Touch.uasset",
+				"C:/Unreal 5.3 Projects/Tetrocube3/Content/Input/IA_Exit.uasset",
+				"C:/Unreal 5.3 Projects/Tetrocube3/Content/Input/IA_Hold.uasset",
+				"C:/Unreal 5.3 Projects/Tetrocube3/Content/Meshes/SM_ActiveSlice.uasset",
+				"C:/Unreal 5.3 Projects/Tetrocube3/Content/Materials/M_Gloss.uasset"
+			]
+		}
+	]
+}

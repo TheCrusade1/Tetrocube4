@@ -1,0 +1,19 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\unreal 5.3 projects\\tetrocube3\\source\\tetrocube3\\private\\tetromino_z.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\unreal 5.3 projects\\tetrocube3\\intermediate\\build\\win64\\x64\\tetrocube3editor\\development\\engine\\sharedpch.engine.cpp20.h.pch",
+        "Includes": [
+            "c:\\unreal 5.3 projects\\tetrocube3\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\tetrocube3\\definitions.tetrocube3.h",
+            "c:\\unreal 5.3 projects\\tetrocube3\\source\\tetrocube3\\public\\tetromino_z.h",
+            "c:\\unreal 5.3 projects\\tetrocube3\\source\\tetrocube3\\public\\tetrominobase.h",
+            "c:\\unreal 5.3 projects\\tetrocube3\\intermediate\\build\\win64\\unrealeditor\\inc\\tetrocube3\\uht\\tetrominobase.generated.h",
+            "c:\\unreal 5.3 projects\\tetrocube3\\intermediate\\build\\win64\\unrealeditor\\inc\\tetrocube3\\uht\\tetromino_z.generated.h",
+            "c:\\unreal 5.3 projects\\tetrocube3\\source\\tetrocube3\\public\\blockbase.h",
+            "c:\\unreal 5.3 projects\\tetrocube3\\intermediate\\build\\win64\\unrealeditor\\inc\\tetrocube3\\uht\\blockbase.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

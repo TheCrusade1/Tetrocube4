@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "Tetrocube3",
+			"Path": "..\\Source\\Tetrocube3.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "Tetrocube3Editor",
+			"Path": "..\\Source\\Tetrocube3Editor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

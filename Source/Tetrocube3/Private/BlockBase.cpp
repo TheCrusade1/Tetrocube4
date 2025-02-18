@@ -21,6 +21,13 @@ ABlockBase::ABlockBase()
 
 }
 
+void ABlockBase::SetCollisionToStatic()
+{	
+	BlockCollision->SetCollisionObjectType(ECollisionChannel::ECC_WorldStatic);
+	BlockCollision->SetCollisionResponseToChannel(ECollisionChannel::ECC_WorldDynamic, ECollisionResponse::ECR_Overlap);
+	BlockCollision->SetCollisionResponseToChannel(ECollisionChannel::ECC_WorldStatic, ECollisionResponse::ECR_Ignore);
+}
+
 // Called when the game starts or when spawned
 void ABlockBase::BeginPlay()
 {
